@@ -1,0 +1,2 @@
+Make sure to only send your assignments after the deadline when directory for new assignment is created, 
+dont create new directory and use this format to name your file "Rollno.fileName.cpp" i.e: "9-set.cpp".
