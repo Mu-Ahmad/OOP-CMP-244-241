@@ -4,17 +4,13 @@
    <style>
        #output{
            box-shadow: 5px 0px 10px 4px;
-           
-           
-           
-       }
+          }
         #container{
             position: relative;
        }    
             
        #img{display: none;}
-    input
-       {
+    input{
            margin-bottom: 20px;
        }
     
@@ -49,63 +45,50 @@
     
     <script>
         function fun(){
-                        var x = document.getElementById("container");
-
-          
-            
+        var x = document.getElementById("container");
         var sl1 = document.getElementById("red");
         var sl2 = document.getElementById("green");
         var sl3 = document.getElementById("blue");
         var out = document.getElementById("value");
-                output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+        output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
         out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
         sl1.onchange = function () {
-            out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
-            var al1 = document.createElement("DIV");
-            al1.id="shape1";
-            al1.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
-                                   al1.style.backgroundColor = "rgb("+sl1.value+",0,0)";
-            x.appendChild(al1);
-            var id = setInterval(frame, 1);
-            var pos = 0;
+                                    out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+                                    var al1 = document.createElement("DIV");
+                                    al1.id="shape1";
+                                    al1.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
+                                    al1.style.backgroundColor = "rgb("+sl1.value+",0,0)";
+                                    x.appendChild(al1);
+                                    var id = setInterval(frame, 1);
+                                    var pos = 0;
   function frame() {
     if (pos == 252) {
     al1.parentNode.removeChild(al1);
          output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
-
-
-    } else {
+} else {
       pos+=1; 
       al1.style.top = pos + "px";  
     }            
-  }
-
+  }       
         }
         sl2.onchange = function () {             
-            
-            var al2 = document.createElement("DIV");
-            al2.id="shape2";
-                        al2.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
-
- x.appendChild(al2);
-            
-            al2.style.backgroundColor = "rgb(0,"+sl2.value+",0)";
-
-            out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
-                                    var id = setInterval(frame, 1);
-            var pos = 0;
-  function frame() {
-    if (pos == 252) {
-    al2.parentNode.removeChild(al2);
-         output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
-
-    } else {
-      pos+=1; 
-      al2.style.top = pos + "px";  
-    }    
-  }
-                                    
-
+                                       var al2 = document.createElement("DIV");
+                                       al2.id="shape2";
+                                       al2.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
+                                       x.appendChild(al2);
+                                       al2.style.backgroundColor = "rgb(0,"+sl2.value+",0)";
+                                       out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+                                       var id = setInterval(frame, 1);
+                                       var pos = 0;
+                  function frame() {
+                                     if (pos == 252) {
+                                                   al2.parentNode.removeChild(al2);
+                                                    output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+                                           } else {
+                                pos+=1; 
+                                al2.style.top = pos + "px";  
+                                  }    
+                           }
         }
         sl3.onchange = function () {
             
@@ -143,10 +126,7 @@
         
     </script>
     
-    <title>
-    SAAZICODES
-    
-    </title>
+    <title>SAADICODES</title>
        
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -175,45 +155,14 @@
                 
                 </div>
             <div id="output" style="height: 70px; width: 300px;padding-top:  50px;border-bottom-left-radius: 20px;border-bottom-right-radius: 30px;border:2px solid gray;border-top:0;">
-                
-                
-                
-                
-                
-                
                 </div>
-            <!--<div id="area">
-            
-
-            
-            
-            
             </div>
-            
-            
-            
-            -->
-                           
-            
-            
-            
-            
-            </div>
-        
-        
-        
         </div>
-        
-        
-        
-        
     </div>
      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    
-    <script>
+ <script>
 //Make the DIV element draggagle:
 dragElement(document.getElementById("div"));
 
@@ -258,15 +207,5 @@ function dragElement(elmnt) {
   }
 }
 </script>
-
-    
-    
-    
-    
-    
-    </body>
-
-
-
-
+</body>
 </html>
