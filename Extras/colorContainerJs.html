@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+       #output{
+           box-shadow: 5px 0px 10px 4px;
+           
+           
+           
+       }
+        #container{
+            position: relative;
+       }    
+            
+       #img{display: none;}
+    input
+       {
+           margin-bottom: 20px;
+       }
+    
+      #shape1{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border-top-right-radius: 0;
+                transform: rotate(-45deg);
+                float: center;
+               position: absolute;
+            }
+      #shape2{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border-top-right-radius: 0;
+                transform: rotate(-45deg);
+                float: center;
+               position: absolute;
+            }
+      #shape3{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border-top-right-radius: 0;
+                transform: rotate(-45deg);
+                float: center;
+               position: absolute;
+            }
+    </style>
+    
+    <script>
+        function fun(){
+                        var x = document.getElementById("container");
+
+          
+            
+        var sl1 = document.getElementById("red");
+        var sl2 = document.getElementById("green");
+        var sl3 = document.getElementById("blue");
+        var out = document.getElementById("value");
+                output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+        out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+        sl1.onchange = function () {
+            out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+            var al1 = document.createElement("DIV");
+            al1.id="shape1";
+            al1.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
+                                   al1.style.backgroundColor = "rgb("+sl1.value+",0,0)";
+            x.appendChild(al1);
+            var id = setInterval(frame, 1);
+            var pos = 0;
+  function frame() {
+    if (pos == 252) {
+    al1.parentNode.removeChild(al1);
+         output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+
+
+    } else {
+      pos+=1; 
+      al1.style.top = pos + "px";  
+    }            
+  }
+
+        }
+        sl2.onchange = function () {             
+            
+            var al2 = document.createElement("DIV");
+            al2.id="shape2";
+                        al2.style.marginLeft = Math.floor(20+Math.random() * 100)+"px";
+
+ x.appendChild(al2);
+            
+            al2.style.backgroundColor = "rgb(0,"+sl2.value+",0)";
+
+            out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+                                    var id = setInterval(frame, 1);
+            var pos = 0;
+  function frame() {
+    if (pos == 252) {
+    al2.parentNode.removeChild(al2);
+         output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+
+    } else {
+      pos+=1; 
+      al2.style.top = pos + "px";  
+    }    
+  }
+                                    
+
+        }
+        sl3.onchange = function () {
+            
+            
+                   var al3 = document.createElement("DIV");
+                      al3.id="shape3";
+                        al3.style.marginLeft = 20+Math.floor(Math.random() * 100)+"px";
+
+                x.appendChild(al3);
+                            al3.style.backgroundColor = "rgb(0,0,"+sl3.value+")";
+
+
+            var id = setInterval(frame, 3);
+            var pos = 0;
+           function frame() {
+           if (pos == 252) {
+    al3.parentNode.removeChild(al3);
+                 output.style.backgroundColor = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+    }
+               else {
+                   pos+=1;
+      al3.style.top = pos + "px";  
+    }             
+             
+
+  }
+            out.innerHTML = "rgb("+sl1.value+","+sl2.value+","+sl3.value+")";
+        }
+        
+        
+        
+        
+        
+        }
+        
+    </script>
+    
+    <title>
+    SAAZICODES
+    
+    </title>
+       
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    </head>
+<body onload="fun();">
+    <div class="container-fluid" onload="new();">
+        <div class="row">
+      
+           
+            <div id="div" class="col-lg-12 col-md-12 col-sm-12 col-12" style="padding: 200px;position:relative;padding-left:20px; position: absolute;
+  z-index: 9;margin:auto;">
+                <div  id="divdrag" id="circle" style="width: 300px;height: 25px;border: 5px solid gray;border-radius: 60%; box-shadow: 2px 3px 20px 2px;background-color: lightcyan;top:8px;position:absolute;top:190px;z-index:10;text-align:center;cursor:move;">
+                Move
+                </div>
+                <div id="container" style="cursor:pointer;text-align:center;width: 300px;height: 300px;border-left: 2px solid gray;border-right: 2px solid gray;padding-left: 35px;border-top-left-radius:4px;border-top-right-radius:4px;background-color:rgb(236,255,255)
+;">
+                
+                 <br><br><br><br>
+            <input type="range" max="255" min="0" id="red" value=0>
+            <br><br><input type="range" max="255" min="0" id="green" value=0>
+            <br><br><input type="range" max="255" min="0" id="blue" value=0>
+            <br>
+            <b id="value"></b>  
+            <br><br> 
+                
+                </div>
+            <div id="output" style="height: 70px; width: 300px;padding-top:  50px;border-bottom-left-radius: 20px;border-bottom-right-radius: 30px;border:2px solid gray;border-top:0;">
+                
+                
+                
+                
+                
+                
+                </div>
+            <!--<div id="area">
+            
+
+            
+            
+            
+            </div>
+            
+            
+            
+            -->
+                           
+            
+            
+            
+            
+            </div>
+        
+        
+        
+        </div>
+        
+        
+        
+        
+    </div>
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    
+    <script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("div"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "drag")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "drag").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+</html>
