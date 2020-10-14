@@ -1,0 +1,16 @@
+   /**Workflow**/ 
+#Input n=10
+-> 10%2   0    n= 10/2 =5 superString = 0
+-> 5%2    1    n= 5/2  =2 superString = 01
+-> 2%2    0    n= 2/2  =1 superString = 010
+-> 1%2    1    n= 1/2  =0 superString = 0101
+#Loop Ends
+#Data in superString is 0101 But we expect 1010.
+#Stored this stringstream in string variable binaryString
+#then binaryString is reversed.
+#Output: 1010
+
+
+why stringstream instead of String ?
+When we will store n%2 (1 or 0) in a binaryString it is stored as Decimal
+of 1 ( 49 ) or 0 ( 48 ).
