@@ -27,8 +27,8 @@ public:
         cin >> scores[i] >> scoreStatus[i];
     }}
     void getScores(){
-        int counter;
-        cin >>counter;
+        int counter=MatchCount;
+        //cin >>counter;
         if(lifeStatus == true){ 
         for(int i =0;i<counter;i++)
         cin >> scores[i] >> scoreStatus[i];
@@ -47,14 +47,14 @@ public:
         for(int i=0;i<MatchCount;i++)
         sum+=scores[i];
         average = sum/ShowIng();
-        cout << "Average: "<< average<< "\n";
+        cout << "Average: "<< average<< endl;
     }}
     void showScores(){
         if(lifeStatus == true){ 
         cout << "Scores: ";
         for(int i=0;i<Cmatch;i++)
         cout << scores[i] << " ";
-        cout << "\n";
+        cout << endl;
     }}
     void deleteplayer(){
         if(lifeStatus == true){ 
@@ -62,14 +62,22 @@ public:
         count--;
         }
     }
+    void createplayer(){
+        cin >> MatchCount;
+        if(lifeStatus == false){ 
+        lifeStatus = true;
+        count++;
+        }
+    }
     bool getstatus() {
     return lifeStatus;
 }
 void showplay(){
-    cout << "Player "<<playerNum << " has played "<< Cmatch << " matches and "<<ShowIng()<<" innings\n";
+    cout << "Player "<<playerNum << " has played "<< Cmatch << " matches and "<<ShowIng()<<" innings";
+    cout << endl;
 }
 void showplayerCount(){
-    cout << "Number of Players: "<<count<<"\n";
+    cout << "Number of Players: "<<count<<endl;
 }
 };
 int Player::count=0;
@@ -105,11 +113,11 @@ int main(){
     }
     else if(choice == 6){
     cin >> playernum;
-    player[playernum-1].getScores();    
+    player[playernum-1].createplayer();    
     }
     else if(choice == 7){
         cin >> playernum;
-        player[playernum-1].read();
+        player[playernum-1].getScores();
     }    
     }
     return 0;
