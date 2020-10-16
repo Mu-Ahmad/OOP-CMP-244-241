@@ -1,116 +1,35 @@
+Lec09_9.cpp
+Yesterday
+Thu 10:41 AM
+
+Abdul Mateen uploaded an item
+C++
+Lec09_9.cpp
 #include <iostream>
 #include <ctime>
 
 using namespace std;
+/*
+	Static array of objects
+	First of all constructor will be called for all objects
+	Secondly, you have to take care of constructor calling
 
-class Player{
-const int playerNum;
-int MatchCount;
-int Cmatch = 0;
-int *scores;
-char *scoreStatus;
-int inings=0;
-bool lifeStatus = true;
-static int count;//shows number of players
+*/
 
+class Point2D{
+	int x, y;
 public:
-    Player(int x):playerNum(count+1){
-        this->MatchCount = x;
-        scores = new int [MatchCount];
-        scoreStatus = new char [MatchCount];
-        count++;
-    }
-    
-    void read(){
-        if(lifeStatus == true){ 
-        for(int i =0;i<MatchCount;i++)
-        cin >> scores[i] >> scoreStatus[i];
-    }}
-    void getScores(){
-        int counter;
-        cin >>counter;
-        if(lifeStatus == true){ 
-        for(int i =0;i<counter;i++)
-        cin >> scores[i] >> scoreStatus[i];
-        Cmatch = counter;
-    }
-    }
-    int ShowIng(){
-        inings =0;
-        for(int i=0;i<MatchCount;i++)
-        if(scoreStatus[i] == 'O') inings++;
-        return inings;
-    }
-    void calculateAverage(){
-        int average,sum = 0;
-        if(lifeStatus == true){ 
-        for(int i=0;i<MatchCount;i++)
-        sum+=scores[i];
-        average = sum/ShowIng();
-        cout << "Average: "<< average<< "\n";
-    }}
-    void showScores(){
-        if(lifeStatus == true){ 
-        cout << "Scores: ";
-        for(int i=0;i<Cmatch;i++)
-        cout << scores[i] << " ";
-        cout << "\n";
-    }}
-    void deleteplayer(){
-        if(lifeStatus == true){ 
-        lifeStatus = false;
-        count--;
-        }
-    }
-    bool getstatus() {
-    return lifeStatus;
-}
-void showplay(){
-    cout << "Player "<<playerNum << " has played "<< Cmatch << " matches and "<<ShowIng()<<" innings\n";
-}
-void showplayerCount(){
-    cout << "Number of Players: "<<count<<"\n";
-}
+	Point2D(int x=0, int y=0){
+		this->x = x;	this->y = y;
+	}
+	void show() const{
+		cout << '(' << x << ',' << y << ")\n";
+	}
 };
-int Player::count=0;
+
 int main(){
-    int matchCount1,matchCount2,matchCount3,operations,choice,i;
-    cin >> matchCount1>>matchCount2>>matchCount3;
-    Player player[3]= {Player(matchCount1),Player(matchCount2),Player(matchCount3)};
-    cin >> operations;
-    int playernum,counter;
-    for(i=0;i<operations;i++)
-    {
-    cin >> choice;
-    if(choice == 1){
-    cin >> playernum;
-    player[playernum-1].calculateAverage();    
-    }    
-    else if(choice == 2){
-    cin >> playernum;
-    player[playernum-1].showplay();
-    player[playernum-1].showScores();
-    
-    }
-    else if(choice == 3){
-    player[0].showplayerCount();   
-    }
-    else if(choice == 4){
-    cin >> playernum;
-    player[playernum-1].calculateAverage();    
-    }
-    else if(choice == 5){
-    cin >> playernum;
-    player[playernum-1].deleteplayer();    
-    }
-    else if(choice == 6){
-    cin >> playernum;
-    player[playernum-1].getScores();    
-    }
-    else if(choice == 7){
-        cin >> playernum;
-        player[playernum-1].read();
-    }    
-    }
-    return 0;
+	Point2D points[10];//By default non-parameterized constructor is called
+	for (int i=0;i<10;i++)
+		points[i].show();
+	return 0;
 }
