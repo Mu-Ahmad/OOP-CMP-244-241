@@ -76,7 +76,7 @@ int main() {
         switch(choice){
             case 1:
                 cin >> pNo;
-                cout << p[pNo-1]->calAvg();
+                cout << "Average: " << p[pNo-1]->calAvg() << '\n';
                 break;
             case 2:
                 cin >> pNo;
@@ -92,10 +92,12 @@ int main() {
             case 5:
                 cin >> pNo;
                 delete p[pNo-1];
+                p[pNo-1] = nullptr;
                 break;
             case 6:
                 cin >> pNo >> nm;
                 delete p[pNo-1];
+                p[pNo-1] = nullptr;
                 p[pNo-1]= new Player(nm);
                 break;
             case 7:
