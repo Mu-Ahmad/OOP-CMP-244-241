@@ -1,17 +1,14 @@
 #include <iostream>
-#include <ctime>
-
 using namespace std;
 
 class Player{
-const int playerNum;
-int MatchCount;
-int Cmatch = 0;
-int *scores;
-char *scoreStatus;
-int inings=0;
-bool lifeStatus = true;
-static int count;//shows number of players
+	const int playerNum;
+	int MatchCount;
+	int *scores;
+	char *scoreStatus;
+	int inings=0;
+	bool lifeStatus = true;
+	static int count;//shows number of players
 
 public:
     Player(int x):playerNum(count+1){
@@ -21,19 +18,11 @@ public:
         count++;
     }
     
-    void read(){
+        void getScores(){
         if(lifeStatus == true){ 
         for(int i =0;i<MatchCount;i++)
         cin >> scores[i] >> scoreStatus[i];
-    }}
-    void getScores(){
-        int counter=MatchCount;
-        //cin >>counter;
-        if(lifeStatus == true){ 
-        for(int i =0;i<counter;i++)
-        cin >> scores[i] >> scoreStatus[i];
-        Cmatch = counter;
-    }
+   		 }
     }
     int ShowIng(){
         inings =0;
@@ -48,14 +37,17 @@ public:
         sum+=scores[i];
         average = sum/ShowIng();
         cout << "Average: "<< average<< endl;
-    }}
+    	}
+	}
+    
     void showScores(){
         if(lifeStatus == true){ 
         cout << "Scores: ";
-        for(int i=0;i<Cmatch;i++)
+        for(int i=0;i<MatchCount;i++)
         cout << scores[i] << " ";
         cout << endl;
-    }}
+    	}
+	}
     void deleteplayer(){
         if(lifeStatus == true){ 
         lifeStatus = false;
@@ -69,18 +61,18 @@ public:
         count++;
         }
     }
-    bool getstatus() {
-    return lifeStatus;
-}
-void showplay(){
-    cout << "Player "<<playerNum << " has played "<< Cmatch << " matches and "<<ShowIng()<<" innings";
-    cout << endl;
-}
-void showplayerCount(){
-    cout << "Number of Players: "<<count<<endl;
+    
+	void showplay(){
+    	cout << "Player "<<playerNum << " has played "<< MatchCount << " matches and "<<ShowIng()<<" innings";
+    	cout << endl;
+	}
+	void showplayerCount(){
+   		 cout << "Number of Players: "<<count<<endl;
 }
 };
+
 int Player::count=0;
+
 int main(){
     int matchCount1,matchCount2,matchCount3,operations,choice,i;
     cin >> matchCount1>>matchCount2>>matchCount3;
