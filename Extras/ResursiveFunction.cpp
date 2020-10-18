@@ -10,4 +10,3 @@ int factorial(int n) {
     cout << result;
     return 0;
 }
-
