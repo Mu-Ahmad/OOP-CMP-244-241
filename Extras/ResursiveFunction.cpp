@@ -1,15 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int n) {
-          if (n > 1) return n * factorial(n - 1);
+long double factorial(int n) {
+          if (n <= 1) // base case
+        return 1;
+    else    
+        return n*factorial(n-1);   
 }
 
 int main() {
-            int n, result;
+            int n;
+			long double result;
             cout << "Enter a number: ";
             cin >> n;
-            result = (n==1) ? 1: factorial(n);
+            result = factorial(n);
             cout << result;
             return 0;
 }
+

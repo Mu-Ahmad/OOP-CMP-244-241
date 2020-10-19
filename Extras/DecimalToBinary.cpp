@@ -13,7 +13,7 @@ int main()
 {
     std::stringstream superString;
     string binaryString;
-    binaryString = " ";
+    binaryString = "";
     long long number;
     cin >> number;
     if(number == 0) cout << 0;
