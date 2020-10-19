@@ -10,7 +10,7 @@ long double factorial(int n) {
 
 int main() {
             int n;
-			long double result;
+	    long double result;
             cout << "Enter a number: ";
             cin >> n;
             result = factorial(n);
