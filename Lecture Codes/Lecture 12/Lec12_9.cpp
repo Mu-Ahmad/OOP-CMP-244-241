@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Test{
+class Test {
 	int x;
 public:
 	Test()			{	cout << "Non parameterized constructor\n";	}
@@ -10,23 +10,26 @@ public:
 	Test(const Test &t)	{	cout << "Copy constructor with const\n";	}
 	void operator = ( const Test &t)	{	cout << "Assignment operator with const\n";	}
 	void operator = ( Test &t)			{	cout << "Assignment operator without const\n";	}
-	Test operator + (const Test &t){
+	Test operator + (const Test &t) {
 		Test newObject;
+		newObject.x += this->x;
+		cout << &newObject << '\n';
 		return newObject;
 	}
-	Test& operator += (const Test &t){
+	Test& operator += (const Test &t) {
 		return *this;
 	}
-	~Test(){	cout << "Destructor\n";	}
+	~Test() {	cout << "Destructor\n";	}
 
-	void show(){	cout << "Show\n";	}
-		
+	void show() {	cout << "Show\n";	}
+
 };
 
-int main(){
+int main() {
 	Test t1, t2;
 	cout << "****** Calling operator + for new object ********\n";
 	Test t3 = t1 + t2;
+	cout << &t3 << '\n';
 	cout << "****** Calling operator + for existing object ********\n";
 	t3 = t1 + t2;
 	cout << "****** Calling operator +=  ********\n";
@@ -37,4 +40,4 @@ int main(){
 	return 0;
 }
 
-	
+
