@@ -7,39 +7,37 @@ using namespace std;
 //Constant data members are initialized before the constructor body
 
 
-class ABC{
+class ABC {
 	const int WIDTH, HEIGHT;
-	int x, y;	
+	int x, y;
 public:
-	ABC ():	WIDTH(100), HEIGHT(200){
+	ABC ():	WIDTH(100), HEIGHT(200) {
 		x = y = 0;
 	}
-	ABC (int width, int height):	WIDTH(width), HEIGHT(height){
+	ABC (int width, int height):	WIDTH(width), HEIGHT(height) {
 		x = y = 0;
 	}
-	ABC (int width, int height, int x, int y):	WIDTH(width), HEIGHT(height){
-		this->x = x;
-		this->y = y;
-	}
-	int getWIDTH() const{
+	ABC (int width, int height, int x, int y):
+		WIDTH(width), HEIGHT(height), x(x), y(y) {}
+	int getWIDTH() const {
 		return WIDTH;
-	}	
-	int getHEIGHT() const{
+	}
+	int getHEIGHT() const {
 		return HEIGHT;
-	}	
-	int getX() const{
+	}
+	int getX() const {
 		return x;
-	}	
-	int getY() const{
+	}
+	int getY() const {
 		return y;
-	}	
+	}
 };
 
 
-int main(){
+int main() {
 	ABC abc1(30, 70), abc2(50, 100, 10, 20);
 	cout << abc1.getWIDTH() << ' ' << abc1.getHEIGHT() << '\n';
 	cout << abc2.getWIDTH() << ' ' << abc2.getHEIGHT() << ' ' << abc2.getX() <<
-		' ' << abc2.getY()<<'\n';
+	     ' ' << abc2.getY() << '\n';
 	return 0;
 }

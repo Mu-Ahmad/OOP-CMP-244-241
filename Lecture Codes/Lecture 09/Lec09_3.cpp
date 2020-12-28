@@ -19,48 +19,48 @@ exist without creation of object		exist with the creation of object
 class data member has only one copy		instance data member has copy for each instance
 */
 
-class ABC{
+class ABC {
 	const int WIDTH, HEIGHT;
-	int x, y;	
+	int x, y;
 	static int count;//shows number of objects
 public:
-	ABC ():	WIDTH(100), HEIGHT(200){
+	ABC ():	WIDTH(100), HEIGHT(200) {
 		x = y = 0;
 		count++;
 	}
-	ABC (int width, int height):	WIDTH(width), HEIGHT(height){
+	ABC (int width, int height):	WIDTH(width), HEIGHT(height) {
 		x = y = 0;
 		count++;
 	}
-	ABC (int width, int height, int x, int y):	WIDTH(width), HEIGHT(height){
+	ABC (int width, int height, int x, int y):	WIDTH(width), HEIGHT(height) {
 		this->x = x;
 		this->y = y;
 		count++;
 	}
-	int getWIDTH() const{
+	int getWIDTH() const {
 		return WIDTH;
-	}	
-	int getHEIGHT() const{
+	}
+	int getHEIGHT() const {
 		return HEIGHT;
-	}	
-	int getX() const{
+	}
+	int getX() const {
 		return x;
-	}	
-	int getY() const{
+	}
+	int getY() const {
 		return y;
-	}	
-	~ABC(){
+	}
+	~ABC() {
 		count--;
 	}
-	static int getCount(){
+	static int getCount() {
 		return count;
 	}
 };
 //Static member initalization
-int ABC::count=0;
+int ABC::count = 0;
 
 
-int main(){
+int main() {
 	cout << "Total number of objects: " << ABC::getCount() << '\n';
 	ABC abc1(30, 70);
 	cout << "Total number of objects: " << ABC::getCount() << '\n';
