@@ -51,3 +51,9 @@ int main() {
 	Magic(n, 2);
 	return 0;
 }
+
+/*
+“I do not intend to tiptoe through life to arrive safely at death.”
+
+M.M. Gavillet
+*/

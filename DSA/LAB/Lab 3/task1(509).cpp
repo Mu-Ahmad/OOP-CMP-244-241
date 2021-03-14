@@ -43,4 +43,12 @@ int main() {
 
   // O(n) approach
   cout << solve(runningSum, n, 1, 0, 10000) << '\n';
+
+  return 0;
 }
+
+/*
+“If we were meant to stay in one place, we'd have roots instead of feet.”
+
+Rachel Wolchin
+*/
