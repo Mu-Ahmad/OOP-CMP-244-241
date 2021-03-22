@@ -96,6 +96,7 @@ w b w b b w w w
 Output3:
 1 3 21 10 2
 Number of white areas:5
+-----------------------
 Input4:  (Edge Case)
 w w w w w w w w w w
 w w w w w w w w w w
